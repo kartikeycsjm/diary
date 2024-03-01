@@ -40,7 +40,7 @@ const page = () => {
     <div className='w-full min-h-screen bg-black flex items-center flex-col'>
       <Header setData={setData}/>
       <div id="input"
-        className='m-5 w-[90%] h-[250px] flex justify-between items-center flex-col'>
+        className='m-5 w-[90%] md:w-[450px] h-[250px] flex justify-between items-center flex-col'>
         <input
           type="text" value={title} onChange={e => setTitle(e.target.value)}
           placeholder='Title'
@@ -72,5 +72,4 @@ const page = () => {
     </div>
   )
 }
-
 export default page
