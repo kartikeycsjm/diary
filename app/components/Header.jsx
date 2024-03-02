@@ -20,7 +20,7 @@ const Header = ({setData}) => {
             </h1>
             <button
                 onClick={handleClick}
-                className='cursor-not-allowed text-[15px] w-[20%] rounded bg-red-800'>
+                className='cursor-not-allowed text-[15px] w-[150px] rounded bg-red-800'>
                 Clear Diary
             </button>
         </div>

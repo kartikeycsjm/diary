@@ -10,14 +10,19 @@ const page = () => {
   const save = () => {
     let d = new Date();
     const newData = { d, title, description }
-    if (localStorage.getItem('data')) {
-      let updatedData = [...data, newData]
-      localStorage.setItem('data', JSON.stringify(updatedData))
-      setData(updatedData)
+    if (title, description) {
+      if (localStorage.getItem('data')) {
+        let updatedData = [...data, newData]
+        localStorage.setItem('data', JSON.stringify(updatedData))
+        setData(updatedData)
+      }
+      else {
+        setData([newData])
+        localStorage.setItem('data', JSON.stringify([newData]))
+      }
     }
-    else {
-      setData([newData])
-      localStorage.setItem('data', JSON.stringify([newData]))
+    else{
+      alert('Please Write title and description both')
     }
   }
   const show = () => {
@@ -26,19 +31,19 @@ const page = () => {
   useEffect(() => {
     show()
   }, [])
-  const del=(i)=>{
-    const con=confirm('do you want to delete?');
-    if(con){
-      const deleted=data.slice().reverse().filter((item,index)=>(
-        i!==index
+  const del = (i) => {
+    const con = confirm('do you want to delete?');
+    if (con) {
+      const deleted = data.slice().reverse().filter((item, index) => (
+        i !== index
       ))
       setData(deleted.slice().reverse())
-      localStorage.setItem('data',JSON.stringify(deleted.slice().reverse()))
+      localStorage.setItem('data', JSON.stringify(deleted.slice().reverse()))
     }
   }
   return (
     <div className='w-full min-h-screen bg-black flex items-center flex-col'>
-      <Header setData={setData}/>
+      <Header setData={setData} />
       <div id="input"
         className='m-5 w-[90%] md:w-[450px] h-[250px] flex justify-between items-center flex-col'>
         <input
@@ -57,10 +62,10 @@ const page = () => {
           Save
         </button>
       </div>
-      <div id="tasks" className='m-4'>
+      <div id="tasks" className='w-full m-4 flex items-center flex-col'>
         {data &&
           data.slice().reverse().map((item, index) => (
-            <Task key={index} srn={index}
+            <Task key={index} srn={index+1}
               title={item.title}
               date={item.d.toLocaleString()}
               description={item.description}
@@ -72,4 +77,4 @@ const page = () => {
     </div>
   )
 }
-export default page
+export default page;
