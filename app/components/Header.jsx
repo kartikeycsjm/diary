@@ -19,7 +19,7 @@ const Header = ({ data, setData }) => {
         <div className='w-full h-[80px] flex justify-around items-center bg-blue-500 flex-col'>
             <div className='w-full h-[60%] flex justify-center items-center bg-blue-500'>
                 <h1
-                    className='w-[400px] text-[20px] flex justify-center items-center'>
+                    className='w-full text-[18px] flex justify-center items-center'>
                     Everything in your mind, Just Write Here
                 </h1>
                 <button
