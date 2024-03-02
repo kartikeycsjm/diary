@@ -64,7 +64,8 @@ const page = () => {
           Save
         </button>
       </div>
-      <div id="tasks" className='w-full m-4 flex items-center flex-col'>
+      <div id="tasks" className='w-full m-4 flex items-center flex-col
+      md:flex-row md:flex-wrap md:justify-around md:items-center'>
         {data &&
           data.slice().reverse().map((item, index) => (
             <Task key={index} srn={index}
