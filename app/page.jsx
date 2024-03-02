@@ -24,6 +24,8 @@ const page = () => {
     else{
       alert('Please Write title and description both')
     }
+    setTitle('')
+    setDescription('')
   }
   const show = () => {
     setData(JSON.parse(localStorage.getItem('data')))
