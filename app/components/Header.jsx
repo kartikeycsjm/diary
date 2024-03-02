@@ -33,7 +33,7 @@ const Header = ({ data, setData }) => {
                     className='mr-1 w-[130px] rounded-l text-blue-600 h-[25px]' />
                 <button onClick={() => router.push(`/${date}`)} className='w-[130px] h-[25px] rounded-l bg-green-600'>Search by date</button>
             </div>
-            <div className='text-center flex justify-center items-center w-[90%] text-[9px] h-[30px]'>Your entries are stored in your browser's local storage. The diary is inaccessible to developer.
+            <div className='text-center flex justify-center items-center w-[90%] text-[8px] h-[30px]'>Your entries are stored in your browser's local storage. The diary is inaccessible to developer.
                 <a className='underline text-black' href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Learn more</a>
             </div>
         </div>
