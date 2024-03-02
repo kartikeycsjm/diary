@@ -65,7 +65,7 @@ const page = () => {
       <div id="tasks" className='w-full m-4 flex items-center flex-col'>
         {data &&
           data.slice().reverse().map((item, index) => (
-            <Task key={index} srn={index+1}
+            <Task key={index} srn={index}
               title={item.title}
               date={item.d.toLocaleString()}
               description={item.description}
