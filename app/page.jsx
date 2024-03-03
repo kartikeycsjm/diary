@@ -7,6 +7,7 @@ const page = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [data, setData] = useState([]);
+  const [write, setWrite] = useState(false)
   const save = () => {
     let d = new Date();
     const newData = { d, title, description }
@@ -21,7 +22,7 @@ const page = () => {
         localStorage.setItem('data', JSON.stringify([newData]))
       }
     }
-    else{
+    else {
       alert('Please Write title and description both')
     }
     setTitle('')
@@ -46,24 +47,27 @@ const page = () => {
   return (
     <div className='w-full min-h-screen bg-black flex items-center flex-col'>
       <Header setData={setData} />
-      <div id="input"
-        className='m-5 w-[90%] md:w-[450px] h-[250px] flex justify-between items-center flex-col'>
-        <input
-          type="text" value={title} onChange={e => setTitle(e.target.value)}
-          placeholder='Title'
-          className='w-[80%] h-[40px] rounded my-5 p-3 text-blue-900'
-        />
-        <textarea
-          type="text" value={description} onChange={e => setDescription(e.target.value)}
-          placeholder='description'
-          className='text-blue-900 w-[80%] h-[100px] rounded my-5 p-3 resize-none'
-        ></textarea>
-        <button onClick={save}
-          className='mb-3 w-[50%] h-[35px] rounded border border-blue-600
-         hover:bg-blue-600'>
-          Save
-        </button>
-      </div>
+      {!write&&<button onClick={()=>setWrite(true)} className='transition duration-500 hover:bg-blue-500 px-2 py-1 border border-blue-500 mt-6 text-[15px] rounded'>Write</button>}
+      {write &&
+        <div id="input"
+          className='m-3 w-[90%] md:w-[450px] h-[350px] flex justify-between items-center flex-col'>
+          <input
+            type="text" value={title} onChange={e => setTitle(e.target.value)}
+            placeholder='Title'
+            className='w-[80%] h-[40px] rounded my-5 p-3 text-blue-900'
+          />
+          <textarea
+            type="text" value={description} onChange={e => setDescription(e.target.value)}
+            placeholder='description'
+            className='text-blue-900 w-[80%] h-[200px] rounded my-5 p-3 resize-none'
+          ></textarea>
+          <button onClick={save}
+            className='mb-3 w-[50%] h-[35px] transition duration-500 rounded border border-blue-600
+       hover:bg-blue-600'>
+            Save
+          </button>
+          <button onClick={()=>setWrite(false)} className='w-[150px] px-2 py-1 transition duration-500 border border-blue-500 text-[10px] rounded hover:bg-blue-600'>Don't want to Write</button>
+        </div>}
       <div id="tasks" className='w-full m-4 flex items-center flex-col
       md:flex-row md:flex-wrap md:justify-around md:items-center'>
         {data &&

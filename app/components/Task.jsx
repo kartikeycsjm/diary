@@ -4,7 +4,7 @@ const Task = ({title,date,description,del}) => {
     return (
         <div className='w-[90%] md:w-[500px] min-h-[220px] rounded-lg border-[2px] border-blue-600
         flex justify-center items-center my-5'>
-            <div className='my-[2%] w-[96%] min-h-[178px] rounded-lg bg-blue-900
+            <div className='my-[2%] w-[96%] min-h-[178px] rounded-lg bg-[#3333]
             flex items-center flex-col'>
                 <div id="head" className='w-full text-[15px] flex items-start py-2'>
                     <h3 className='px-5 text-[20px] '>{title}</h3>
