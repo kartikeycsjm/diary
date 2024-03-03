@@ -18,14 +18,12 @@ const Page = () => {
     const [data, setData] = useState([])
     const storedData = [...JSON.parse(localStorage.getItem('data')) || []];
     useEffect(() => {
-        console.log(params.get('date'));
-
         const fetchData = () => {
             if (params.has('date')) {
                 const searchData = storedData.filter(item => item.d.startsWith(params.get('date')));
                 setData(searchData);
             }
-            if (params.has('title')) {
+            else if (params.has('title')) {
                 const t = params.get('title').toLowerCase();
                 const searchData = storedData.filter(item => item.title.toLowerCase() === t);
                 setData(searchData);
