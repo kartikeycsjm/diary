@@ -10,8 +10,11 @@ const page = () => {
   const [write, setWrite] = useState(false)
   const save = () => {
     let d = new Date();
-    const newData = { d, title, description }
-    if (title, description) {
+    let options = { year: 'numeric', month: '2-digit', day: '2-digit',hour:'numeric',minute:'numeric',second:'numeric',hour12:true,timeZone: 'Asia/Kolkata' };
+    let formatter = new Intl.DateTimeFormat('en-IN', options);
+    let formattedDate = formatter.format(d);
+    const newData = { d: formattedDate, title, description }
+    if (title && description) {
       if (localStorage.getItem('data')) {
         let updatedData = [...data, newData]
         localStorage.setItem('data', JSON.stringify(updatedData))
@@ -28,6 +31,7 @@ const page = () => {
     setTitle('')
     setDescription('')
   }
+  
   const show = () => {
     setData(JSON.parse(localStorage.getItem('data')))
   }
@@ -74,7 +78,7 @@ const page = () => {
           data.slice().reverse().map((item, index) => (
             <Task key={index} srn={index}
               title={item.title}
-              date={item.d.toLocaleString()}
+              date={item.d}
               description={item.description}
               del={() => del(index)}
             />

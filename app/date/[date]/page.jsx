@@ -19,7 +19,10 @@ const Page = () => {
     const storedData = [...JSON.parse(localStorage.getItem('data')) || []];
     useEffect(() => {
         const fetchData = () => {
-            const searchData = storedData.filter(item => item.d.startsWith(params.date));
+            const parts=params.date.split('-');
+            let cdate=parts[2] + '/' + parts[1] + '/' + parts[0];
+            console.log(cdate);
+            const searchData = storedData.filter(item => item.d.startsWith(cdate));
             setData(searchData);
         };
         fetchData();
@@ -52,7 +55,7 @@ const Page = () => {
             </div>
             <div id="tasks" className='w-full m-4 flex items-center flex-col'>
                 {data.map((item, index) => (
-                    <Task key={index} srn={index + 1} title={item.title} date={item.d.toLocaleString()} description={item.description} del={() => del(index)} />
+                    <Task key={index} srn={index + 1} title={item.title} date={item.d} description={item.description} del={() => del(index)} />
                 ))}
             </div>
             <Footer></Footer>

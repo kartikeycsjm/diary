@@ -53,7 +53,7 @@ const Page = () => {
             </div>
             <div id="tasks" className='w-full m-4 flex items-center flex-col'>
                 {data.map((item, index) => (
-                    <Task key={index} srn={index + 1} title={item.title} date={item.d.toLocaleString()} description={item.description} del={() => del(index)} />
+                    <Task key={index} srn={index + 1} title={item.title} date={item.d} description={item.description} del={() => del(index)} />
                 ))}
             </div>
             <Footer></Footer>
