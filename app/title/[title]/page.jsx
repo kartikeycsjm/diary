@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Task from '@/app/components/Task'
 import Footer from '@/app/components/Footer'
-import { useSearchParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 const Page = () => {
     const handleClick = () => {
         const ans = confirm('Do you want to Clear diary?')
@@ -14,23 +14,17 @@ const Page = () => {
             }
         }
     }
-    const params = useSearchParams();
+    const params = useParams();
     const [data, setData] = useState([])
     const storedData = [...JSON.parse(localStorage.getItem('data')) || []];
     useEffect(() => {
         const fetchData = () => {
-            if (params.has('date')) {
-                const searchData = storedData.filter(item => item.d.startsWith(params.get('date')));
-                setData(searchData);
-            }
-            else if (params.has('title')) {
-                const t = params.get('title').toLowerCase();
-                const searchData = storedData.filter(item => item.title.toLowerCase() === t);
-                setData(searchData);
-            }
+            const t = params.title.toLowerCase();
+            const searchData = storedData.filter(item => item.title.toLowerCase() === t);
+            setData(searchData);
         };
         fetchData();
-    }, [params.get('date'), params.get('title')]);
+    }, [params.date]);
     const del = (index) => {
         let ques = confirm('do you really want to delete?')
         if (ques) {

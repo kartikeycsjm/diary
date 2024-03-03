@@ -20,10 +20,10 @@ const Header = ({ data, setData }) => {
         }
     }
     const searchbydate=()=>{
-        router.push(`/search?date=${date}`)
+        router.push(`/date/${date}`)
     }
     const searchbytitle=()=>{
-        router.push(`/search?title=${title}`)
+        router.push(`/title/${title}`)
     }
     return (
         <div className='sticky top-0 w-full h-[100px] flex justify-around items-center bg-blue-600 flex-col'>
