@@ -19,10 +19,10 @@ const Header = ({ data, setData }) => {
             }
         }
     }
-    const searchbydate=()=>{
+    const searchbydate = () => {
         router.push(`/date/${date}`)
     }
-    const searchbytitle=()=>{
+    const searchbytitle = () => {
         router.push(`/title/${title}`)
     }
     return (
@@ -32,28 +32,30 @@ const Header = ({ data, setData }) => {
                     className='w-[80%] text-[18px] flex justify-center items-center'>
                     Everything in your mind, Just Write Here
                 </h1>
-                
+
             </div>
-            <div id="search" className='w-full h-[40%] flex justify-around items-center'>
+            <div id="search" className='w-full md:w-[600px] h-[40%] flex justify-around items-center'>
                 {(!sd && rb) && <button onClick={() => { setSt(true); setRb(false) }} className='w-[130px] h-[25px] rounded-lg bg-[rgba(0,0,0,0.6)] text-[14px]'>Search by Title</button>}
                 {(!st && rb) && <button onClick={() => { setSd(true); setRb(false) }} className='w-[130px] h-[25px] rounded-lg bg-[rgba(0,0,0,0.6)] text-[14px]'>Search by Date</button>}
                 {sd &&
-                    <div >
+                    <div className='border w-[60%] h-full flex justify-center items-center'>
+                        <button onClick={() => {setSd(false); setRb(true)}} className='rounded-l text-blue-600 bg-white h-[25px] w-[25px] text-[20px] flex justify-center items-center '>&lt;</button>
                         <input type="date" value={date} onChange={e => setDate(e.target.value)}
-                            className='mr-1 w-[150px] rounded-l text-blue-600 h-[25px]' />
-                       <button onClick={searchbydate} className='w-[130px] h-[25px] rounded-lg bg-green-600'>Search</button>
+                            className='w-[130px] text-blue-600 h-[25px] text-center' />
+                        <button onClick={searchbydate} className='w-[40px] h-[25px] rounded-r bg-white text-blue-600'>Go</button>
                     </div>
                 }
                 {st &&
-                    <div>
+                    <div className='border w-[60%] flex h-full justify-center items-center'>
+                        <button onClick={() => {setSt(false); setRb(true)}} className='rounded-l text-blue-600 bg-white h-[25px] w-[25px] text-[20px] flex justify-center items-center '>&lt;</button>
                         <input type="text" value={title} onChange={e => setTitle(e.target.value)}
-                            className='mr-1 w-[150px] rounded-l text-blue-600 h-[25px]' />
-                        <button onClick={searchbytitle} className='w-[130px] h-[25px] rounded-lg bg-green-600'>Search</button>
+                            className='w-[200px] text-blue-600 h-[25px] text-center' />
+                        <button onClick={searchbytitle} className='w-[40px] h-[25px] rounded-r bg-white text-blue-600'>Go</button>
                     </div>
                 }
                 <button
                     onClick={handleClick}
-                    className='cursor-not-allowed w-[100px] text-[14px] rounded bg-red-950'>
+                    className='cursor-not-allowed text-[14px] rounded bg-red-950 w-[100px]'>
                     Clear Diary
                 </button>
             </div>
