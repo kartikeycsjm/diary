@@ -47,7 +47,7 @@ const Header = ({ data, setData }) => {
                 {st &&
                     <div>
                         <input type="text" value={title} onChange={e => setTitle(e.target.value)}
-                            className='mr-1 w-[200px] rounded-l text-blue-600 h-[25px]' />
+                            className='mr-1 w-[150px] rounded-l text-blue-600 h-[25px]' />
                         <button onClick={searchbytitle} className='w-[130px] h-[25px] rounded-lg bg-green-600'>Search</button>
                     </div>
                 }
