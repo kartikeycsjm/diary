@@ -29,16 +29,15 @@ const Header = ({ data, setData }) => {
         <div className='sticky top-0 w-full h-[100px] flex justify-around items-center bg-blue-600 flex-col'>
             <div className='w-full h-[35%] flex justify-center items-center'>
                 <h1
-                    className='w-[80%] text-[18px] flex justify-center items-center'>
+                    className='text-white w-[80%] text-[18px] flex justify-center items-center'>
                     Everything in your mind, Just Write Here
                 </h1>
-
             </div>
-            <div id="search" className='w-full md:w-[600px] h-[40%] flex justify-around items-center'>
+            <div id="search" className='text-white w-full md:w-[600px] h-[40%] flex justify-around items-center'>
                 {(!sd && rb) && <button onClick={() => { setSt(true); setRb(false) }} className='w-[130px] h-[25px] rounded-lg bg-[rgba(0,0,0,0.6)] text-[14px]'>Search by Title</button>}
                 {(!st && rb) && <button onClick={() => { setSd(true); setRb(false) }} className='w-[130px] h-[25px] rounded-lg bg-[rgba(0,0,0,0.6)] text-[14px]'>Search by Date</button>}
                 {sd &&
-                    <div className='border w-[60%] h-full flex justify-center items-center'>
+                    <div className='w-[60%] h-full flex justify-center items-center'>
                         <button onClick={() => {setSd(false); setRb(true)}} className='rounded-l text-blue-600 bg-white h-[25px] w-[25px] text-[20px] flex justify-center items-center '>&lt;</button>
                         <input type="date" value={date} onChange={e => setDate(e.target.value)}
                             className='w-[130px] text-blue-600 h-[25px] text-center' />
@@ -46,7 +45,7 @@ const Header = ({ data, setData }) => {
                     </div>
                 }
                 {st &&
-                    <div className='border w-[60%] flex h-full justify-center items-center'>
+                    <div className='w-[60%] flex h-full justify-center items-center'>
                         <button onClick={() => {setSt(false); setRb(true)}} className='rounded-l text-blue-600 bg-white h-[25px] w-[25px] text-[20px] flex justify-center items-center '>&lt;</button>
                         <input type="text" value={title} onChange={e => setTitle(e.target.value)}
                             className='w-[200px] text-blue-600 h-[25px] text-center' />
@@ -59,8 +58,8 @@ const Header = ({ data, setData }) => {
                     Clear Diary
                 </button>
             </div>
-            <div className='text-center flex justify-center items-center w-full text-[8px] h-[10%]'>Your entries are stored in your browser's local storage. The diary is inaccessible to developer.
-                <a className='underline text-black' href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Learn more</a>
+            <div className='text-white text-center flex justify-around items-center w-[390px] text-[8px] h-[10%]'>Your entries are stored in your browser's local storage. The diary is inaccessible to developer.
+                <a className='underline text-blue-950' href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Learn more</a>
             </div>
         </div>
     )

@@ -38,7 +38,7 @@ const Page = () => {
         }
     };
     return (
-        <div className='w-full min-h-screen bg-black flex items-center flex-col'>
+        <div className='text-white w-full min-h-screen bg-black flex items-center flex-col'>
             <div className='w-full h-[70px] flex justify-center items-center bg-blue-600 flex-col'>
                 <div className='w-full h-[60%] flex justify-center items-center'>
                     <h1

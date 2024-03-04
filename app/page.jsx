@@ -51,7 +51,7 @@ const page = () => {
   return (
     <div className='w-full min-h-screen bg-black flex items-center flex-col'>
       <Header setData={setData} />
-      {!write&&<button onClick={()=>setWrite(true)} className='transition duration-500 hover:bg-blue-500 px-2 py-1 border border-blue-500 mt-6 text-[15px] rounded'>Write</button>}
+      {!write&&<button onClick={()=>setWrite(true)} className='transition duration-500 hover:bg-blue-500 px-2 py-1 border border-blue-500 mt-6 text-[15px] rounded text-white'>Write</button>}
       {write &&
         <div id="input"
           className='m-3 w-[90%] md:w-[450px] h-[350px] flex justify-between items-center flex-col'>
@@ -66,11 +66,11 @@ const page = () => {
             className='text-blue-900 w-[80%] h-[200px] rounded my-5 p-3 resize-none'
           ></textarea>
           <button onClick={save}
-            className='mb-3 w-[50%] h-[35px] transition duration-500 rounded border border-blue-600
+            className='text-white mb-3 w-[50%] h-[35px] transition duration-500 rounded border border-blue-600
        hover:bg-blue-600'>
             Save
           </button>
-          <button onClick={()=>setWrite(false)} className='w-[150px] px-2 py-1 transition duration-500 border border-blue-500 text-[10px] rounded hover:bg-blue-600'>Don't want to Write</button>
+          <button onClick={()=>setWrite(false)} className= ' text-white w-[150px] px-2 py-1 transition duration-500 border border-blue-500 text-[10px] rounded hover:bg-blue-600'>Don't want to Write</button>
         </div>}
       <div id="tasks" className='w-full m-4 flex items-center flex-col
       md:flex-row md:flex-wrap md:justify-around md:items-center'>

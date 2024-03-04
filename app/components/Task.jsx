@@ -2,7 +2,7 @@ import React from 'react'
 
 const Task = ({title,date,description,del}) => {
     return (
-        <div className='w-[90%] md:w-[500px] min-h-[220px] rounded-lg border-[2px] border-blue-600
+        <div className='text-white w-[90%] md:w-[500px] min-h-[220px] rounded-lg border-[2px] border-blue-600
         flex justify-center items-center my-5'>
             <div className='my-[2%] w-[96%] min-h-[178px] rounded-lg bg-[#3333]
             flex items-center flex-col'>
