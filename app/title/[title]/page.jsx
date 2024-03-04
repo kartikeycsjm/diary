@@ -19,12 +19,15 @@ const Page = () => {
     const storedData = [...JSON.parse(localStorage.getItem('data')) || []];
     useEffect(() => {
         const fetchData = () => {
-            const t = params.title.toLowerCase();
-            const searchData = storedData.filter(item => item.title.toLowerCase() === t);
+            const searchTerm = params.title ? params.title.toLowerCase() : '';
+            const searchData = storedData.filter(item => {
+                const title = item.title.toLowerCase();
+                return title.includes(searchTerm);
+            });
             setData(searchData);
         };
         fetchData();
-    }, [params.date]);
+    }, [params.title]);
     const del = (index) => {
         let ques = confirm('do you really want to delete?')
         if (ques) {

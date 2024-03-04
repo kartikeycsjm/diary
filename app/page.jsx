@@ -57,7 +57,7 @@ const page = () => {
           className='m-3 w-[90%] md:w-[450px] h-[350px] flex justify-between items-center flex-col'>
           <input
             type="text" value={title} onChange={e => setTitle(e.target.value)}
-            placeholder='Title'
+            placeholder='Title (no spaces should be in title)'
             className='w-[80%] h-[40px] rounded my-5 p-3 text-blue-900'
           />
           <textarea
