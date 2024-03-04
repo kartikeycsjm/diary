@@ -23,10 +23,9 @@ const Task = ({ title, date, description, del }) => {
                     </div>
                 </div>
                 <div id="desc" className='text-white flex justify-center items-center flex-col w-full text-[13px]'>
-                    <span className='p-1 text-[12px]'>{date}</span>
+                    <span className='pt-2 text-[12px]'>{date}</span>
                     <p className='p-3 w-full text-justify min-h-[68px]'>{description}</p>
                 </div>
-
             </div>
         </div>
     )
