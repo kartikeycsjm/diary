@@ -29,7 +29,7 @@ const Header = ({ data, setData }) => {
         <div className='sticky top-0 w-full h-[100px] flex justify-around items-center bg-blue-600 flex-col'>
             <div className='w-full h-[35%] flex justify-center items-center'>
                 <h1
-                    className='text-white w-[80%] text-[18px] flex justify-center items-center'>
+                    className='text-white w-[80%] text-[16px] flex justify-center items-center'>
                     Everything in your mind, Just Write Here
                 </h1>
             </div>
